@@ -19,3 +19,4 @@ jobs:
 
       - name: Deploy
         run: flyctl deploy
+        working-directory: ./src/backend
