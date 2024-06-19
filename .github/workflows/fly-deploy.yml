@@ -22,9 +22,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Replace secret key in Dockerfile
+        working-directory: ./src/backend
         run: |
-          sed -i 's/PLACEHOLDER/${{ secrets.DOCKER_SECRET_KEY }}/g' Dockerfile
-          working-directory: ./src/backend      
+          sed -i 's/PLACEHOLDER/${{ secrets.DOCKER_SECRET_KEY }}/g' Dockerfile   
         
       - name: Setup flyctl
         uses: superfly/flyctl-actions/setup-flyctl@master
