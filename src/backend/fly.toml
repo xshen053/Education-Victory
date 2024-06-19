@@ -13,7 +13,6 @@ console_command = '/code/manage.py shell'
   release_command = 'python manage.py migrate --noinput'
 
 [env]
-  CSRF = "https://*.fly.dev"
   ENVIRONMENT = "TEST"
 
 
