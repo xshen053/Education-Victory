@@ -12,6 +12,9 @@ console_command = '/code/manage.py shell'
 [deploy]
   release_command = 'python manage.py migrate --noinput'
 
+[env]
+  DATABASE_URL = "postgres://ev2_xiaxi:NH5Imt0I3Ju9txD@ev2-xiaxi-db.flycast:5432/ev2_xiaxi?sslmode=disable"
+
 [http_service]
   internal_port = 8000
   force_https = true
