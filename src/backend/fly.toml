@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for ev2-xiaxi on 2024-06-19T10:15:35-07:00
+# fly.toml app configuration file generated for ev2-xiaxi-staging on 2024-06-19T14:05:37-07:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'ev2-xiaxi'
+app = 'ev2-xiaxi-staging'
 primary_region = 'sea'
 console_command = '/code/manage.py shell'
 
@@ -26,9 +26,7 @@ console_command = '/code/manage.py shell'
   processes = ['app']
 
 [[vm]]
-  memory = '1gb'
-  cpu_kind = 'shared'
-  cpus = 1
+  size = 'shared-cpu-1x'
 
 [[statics]]
   guest_path = '/code/static'
