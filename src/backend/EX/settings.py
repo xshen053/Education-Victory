@@ -24,7 +24,7 @@ ENVIRONMENT = os.getenv('ENVIRONMENT')
 if ENVIRONMENT == 'LOCAL':
     DEBUG = True
     ROOT = 'http://127.0.0.1:8000'
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ev2-xiaxi.fly.dev']
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
     SECRET_KEY = 'django-insecure-@s=_aoq!k!h-@b^%t!+zoxo4fs@e+ccr^lld4fd9+3oxdg^!^!'
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DATABASES = {
