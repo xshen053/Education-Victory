@@ -25,9 +25,9 @@ RUN set -ex && \
     rm -rf /root/.cache/
 COPY . /code
 
-ENV SECRET_KEY PLACEHOLDER
+ENV SECRET_KEY "LL1CKhOQ9SkdYbcrCRe02VbWbw6TyAXfuwqR1upMZNrYVNxWI7"
 #RUN python manage.py collectstatic --noinput
 
-EXPOSE 8000 
+EXPOSE 8000
 
 CMD ["sh", "-c", "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn --bind 0.0.0.0:8000 --workers 1 --threads 8 --timeout 0 EX.wsgi:application"]
