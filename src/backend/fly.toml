@@ -2,7 +2,7 @@
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
-
+ 
 app = 'ev2-xiaxi'
 primary_region = 'sea'
 console_command = '/code/manage.py shell'
