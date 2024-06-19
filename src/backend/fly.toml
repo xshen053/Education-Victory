@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for ev2 on 2024-06-16T14:10:23-07:00
+# fly.toml app configuration file generated for ev2-xiaxi on 2024-06-19T10:15:35-07:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'ev2'
+app = 'ev2-xiaxi'
 primary_region = 'sea'
 console_command = '/code/manage.py shell'
 
@@ -11,15 +11,6 @@ console_command = '/code/manage.py shell'
 
 [deploy]
   release_command = 'python manage.py migrate --noinput'
-
-[env]
-  CSRF = "https://*.fly.dev"
-  DATABASE_URL = "postgres://ev2:P01VLUtSF6Zt2GZ@xiaxi-postgres-db.flycast:5432/ev2?sslmode=disable"
-  EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-  ENVIRONMENT = "TEST"
-  PORT = "8000"
-  ROOT = "https://ev2.fly.dev"
-  HOST = "ev2.fly.dev"
 
 [http_service]
   internal_port = 8000
