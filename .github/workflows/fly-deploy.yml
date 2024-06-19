@@ -40,6 +40,13 @@ jobs:
         run: |
           sed -i 's/PLACEHOLDER/$DOCKER_SECRET_KEY/g' Dockerfile
 
+      - name: Debug environment variables
+        run: |
+          echo "Port: $PORT"
+          echo "Root: $ROOT"
+          echo "Host: $HOST"
+
+
       - name: Replace secrets in fly.toml
         working-directory: ./src/backend
         run: |
