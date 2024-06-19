@@ -5,6 +5,13 @@ on:
 
 env:
   FLY_API_TOKEN: ${{ secrets.FLY_TOKEN }}
+  CSRF: ${{ secrets.CSRF }}
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  EMAIL_BACKEND: ${{ secrets.EMAIL_BACKEND }}
+  ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
+  PORT: ${{ secrets.PORT }}
+  ROOT: ${{ secrets.ROOT }}
+  HOST: ${{ secrets.HOST }}
 
 jobs:
   deploy:
@@ -13,6 +20,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Replace secret key in Dockerfile
+        run: |
+          sed -i 's/PLACEHOLDER/${{ secrets.DOCKER_SECRET_KEY }}/g' Dockerfile        
         
       - name: Setup flyctl
         uses: superfly/flyctl-actions/setup-flyctl@master
